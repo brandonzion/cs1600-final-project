@@ -63,7 +63,11 @@ GearShift ShiftInput::update(bool upPressed, bool downPressed, unsigned long now
   stableDown_  = downPressed;
  
   if (!wasIdle) return GearShift::NONE;
-  if (upPressed && !downPressed) return GearShift::UPSHIFT;
-  if (downPressed && !upPressed) return GearShift::DOWNSHIFT;
+  if (upPressed && !downPressed) {
+    return GearShift::UPSHIFT;
+  }
+  if (downPressed && !upPressed) {
+    return GearShift::DOWNSHIFT;
+  }
   return GearShift::NONE;
 }

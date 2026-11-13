@@ -3,7 +3,7 @@
 #include "engine.h"
 
 const uint8_t PIN_POT  = A0;
-const uint8_t PIN_UP   = 2;
+const uint8_t PIN_UP = 2;
 const uint8_t PIN_DOWN = 3;
 
 #define LINK Serial1
@@ -18,12 +18,12 @@ void transmitFrame(const EngineState& s, float throttle) {
   // TODO: replace with the shared CAN library's send call
   // For now, output in Serial Plotter format
   Serial.print("rpm:");       Serial.print(s.rpm);
-  Serial.print(",gear:");     Serial.print(s.gear * 1000);
+  Serial.print(",gear:");     Serial.print(s.gear * 1000); // multiplying by 1000 for serial plotter visibility 
   Serial.print(",throttle:"); Serial.println(throttle * 1000);
 }
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(LINK_BAUD);
   LINK.begin(LINK_BAUD);
   pinMode(PIN_UP, INPUT_PULLUP);
   pinMode(PIN_DOWN, INPUT_PULLUP);
@@ -36,8 +36,10 @@ void loop() {
   unsigned long now = millis();
 
   float throttle = potToThrottle(analogRead(PIN_POT), ADC_MAX);
-  GearShift s = shiftInput.update(digitalRead(PIN_UP) == LOW,
-                                  digitalRead(PIN_DOWN) == LOW, now);
+  bool shiftUP = digitalRead(PIN_UP); 
+  bool shiftDOWN = digitalRead(PIN_DOWN);
+  GearShift s = shiftInput.update(shiftUP == HIGH, shiftDOWN == HIGH, now);
+
   uint8_t newGear = applyShift(state.gear, s);
   if (newGear != state.gear) {
     rpmExact   = rpmAfterShift(rpmExact, state.gear, newGear);
