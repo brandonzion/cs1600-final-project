@@ -1,0 +1,57 @@
+{
+  "configurations": [
+    {
+      "name": "Arduino Uno R4 WiFi",
+      "compilerPath": "${env:HOME}/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/arm-none-eabi-g++",
+      "compilerArgs": [
+        "-mcpu=cortex-m4",
+        "-mthumb",
+        "-mfloat-abi=hard",
+        "-mfpu=fpv4-sp-d16"
+      ],
+      "intelliSenseMode": "gcc-arm",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/cores/arduino/tinyusb",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/cores/arduino/api/deprecated",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/cores/arduino/api/deprecated-avr-comp",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/cores/arduino",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/variants/UNOWIFIR4",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/variants/UNOWIFIR4/includes/ra/fsp/inc",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/variants/UNOWIFIR4/includes/ra/fsp/inc/api",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/variants/UNOWIFIR4/includes/ra/fsp/inc/instances",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/variants/UNOWIFIR4/includes/ra/arm/CMSIS_5/CMSIS/Core/Include",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/variants/UNOWIFIR4/includes/ra_gen",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/variants/UNOWIFIR4/includes/ra_cfg/fsp_cfg/bsp",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/variants/UNOWIFIR4/includes/ra_cfg/fsp_cfg",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/variants/UNOWIFIR4/includes/ra/fsp/src/r_usb_basic/src/driver/inc",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/variants/UNOWIFIR4/includes/ra/fsp/src/r_sce/crypto_procedures/src/sce5/plainkey/private/inc",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/variants/UNOWIFIR4/includes/ra/fsp/src/r_sce/crypto_procedures/src/sce5/plainkey/public/inc",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/variants/UNOWIFIR4/includes/ra/fsp/src/r_sce/common",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/variants/UNOWIFIR4/includes/ra/fsp/src/r_sce",
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/libraries/WDT/src"
+      ],
+      "defines": [
+        "F_CPU=48000000",
+        "NO_USB",
+        "BACKTRACE_SUPPORT",
+        "ARDUINO_UNOR4_WIFI",
+        "ARDUINO=10607",
+        "ARDUINO_UNOWIFIR4",
+        "ARDUINO_ARCH_RENESAS_UNO",
+        "ARDUINO_ARCH_RENESAS",
+        "ARDUINO_FSP",
+        "_XOPEN_SOURCE=700",
+        "CFG_TUSB_MCU=OPT_MCU_RAXXX",
+        "_RA_CORE=CM4",
+        "_RENESAS_RA_"
+      ],
+      "forcedInclude": [
+        "${env:HOME}/Library/Arduino15/packages/arduino/hardware/renesas_uno/1.6.0/cores/arduino/Arduino.h"
+      ],
+      "cStandard": "gnu11",
+      "cppStandard": "gnu++17"
+    }
+  ],
+  "version": 4
+}
